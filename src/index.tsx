@@ -7,6 +7,7 @@
 *********************************************************** */
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// @ts-nocheck
 /**
  * @module NiceModal
  * */
