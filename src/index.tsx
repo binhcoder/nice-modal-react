@@ -475,7 +475,7 @@ const NiceModalPlaceholder: React.FC = () => {
   );
 };
 
-const InnerContextProvider: React.FC = ({ children }) => {
+const InnerContextProvider: React.FC = ({ children }: { children: React.ReactNode }) => {
   const arr = useReducer(reducer, initialState);
   const modals = arr[0];
   dispatch = arr[1];
