@@ -418,7 +418,7 @@ export const create = <P extends {}>(
     if (!shouldMount) return null;
     return (
       <NiceModalIdContext.Provider value={id}>
-        <Comp {...(props as P)} {...args} />
+        <Comp {...(props as unknown as P)} {...args} />
       </NiceModalIdContext.Provider>
     );
   };
@@ -497,6 +497,7 @@ export const Provider: React.FC<Record<string, unknown>> = ({
   modals?: NiceModalStore;
 }) => {
   if (!givenDispatch || !givenModals) {
+    // @ts-ignore
     return <InnerContextProvider>{children}</InnerContextProvider>;
   }
   dispatch = givenDispatch;
